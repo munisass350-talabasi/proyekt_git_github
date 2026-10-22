@@ -1,4 +1,8 @@
 function calculateAB (a, b, type) {
+    if(typeof a !== "number" || typeof b !== "number") {
+        throw new Error('a or b parameter is not a number')
+    }
+    
     switch (type) {
         case "plus":
             return a + b
@@ -10,6 +14,6 @@ function calculateAB (a, b, type) {
             return a * b
     
         default:
-            throw new Error("Unknown parameter type")
+            throw new Error(`Unknown parameter type: ${type}`)
     }
 }
